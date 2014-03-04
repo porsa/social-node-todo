@@ -17,4 +17,3 @@ npm install -g grunt-cli
 cd /vagrant
 npm install
 bower install --allow-root
-grunt serve
