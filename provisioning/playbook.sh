@@ -14,6 +14,7 @@ sudo apt-get install -y mongodb-10gen
 npm install -g yo
 npm install -g generator-gruntfile
 npm install -g grunt-cli
+npm install -g passport-facebook
 cd /vagrant
 npm install
 bower install --allow-root
