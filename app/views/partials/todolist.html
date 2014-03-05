@@ -1,0 +1,31 @@
+<div ng-include="'partials/navbar'"></div>
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <form class="form" name="form" ng-submit="todoListAdd()" novalidate>
+
+            <div class="form-group">
+                <label>Create new ToDo list</label>
+
+                <input type="text" name="name" class="form-control" ng-model="todoList.name"
+                       mongoose-error/>
+                <p class="help-block" ng-show="form.name.$error.mongoose">
+                    {{ errors.other }}
+                </p>
+            </div>
+            <p class="help-block"> {{ message }} </p>
+            <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
+        </form>
+        <h1>All ToDo lists </h1>
+
+
+        <div class="all-todolists">
+            <div ng-repeat="todoList in todoLists">
+                <h4>{{ todoList.name }}</h4>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
