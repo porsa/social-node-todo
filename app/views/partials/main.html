@@ -9,6 +9,16 @@
   <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
 </div>
 
+<div class="jooh">
+    <div ng-repeat="todoList in todoLists">
+        <h4>{{ todoList.name }}</h4>
+    </div>
+    <form class="form" name="form" ng-submit="todoListAdd()" novalidate>
+        <input type="text" name="name" class="form-control" ng-model="todoList.name" />
+        <button>Add todolist</button>
+    </form>
+</div>
+
 <div class="row marketing">
   <div ng-repeat="thing in awesomeThings">
       <h4>{{thing.name}}</h4>

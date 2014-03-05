@@ -18,4 +18,3 @@ npm install -g passport-facebook
 cd /vagrant
 npm install
 bower install --allow-root
-grunt serve
