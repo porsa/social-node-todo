@@ -433,6 +433,13 @@ module.exports = function (grunt) {
       return grunt.task.run(['build', 'express:prod', 'open', 'express-keepalive']);
     }
 
+    if (grunt.file.exists('./lib/config/env/auth-local.js') === false) {
+      grunt.file.copy(
+        './lib/config/env/auth-dist.js',
+        './lib/config/env/auth-local.js'
+      );
+    }
+
     if (target === 'debug') {
       return grunt.task.run([
         'clean:server',
