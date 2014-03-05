@@ -8,5 +8,5 @@ heroku
 dist
 .idea/
 .vagrant/
-lib/config/env/auth.js
+lib/config/env/auth-local.js
 
