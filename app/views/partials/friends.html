@@ -25,7 +25,7 @@
             <ul ng-repeat="user in people">
                 <li>
                   <span>{{ user.name }}</span>
-                  <span>({{ user.email }})</span>
+                  <span ng-show="user.email">({{ user.email }})</span>
                   <span>
                     <button class="btn btn-sm btn-primary" type="submit">Add Friend</button>
                   </span>
