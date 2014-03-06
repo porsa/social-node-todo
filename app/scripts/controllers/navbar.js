@@ -12,7 +12,9 @@ angular.module('socialNodeToDoApp')
     }, {
         'title': 'ToDo',
         'link': '/todolist'
-
+    }, {
+        'title': 'Friends',
+        'link':  '/friends'
     }];
     
     $scope.logout = function() {

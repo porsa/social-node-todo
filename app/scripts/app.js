@@ -30,6 +30,11 @@ angular.module('socialNodeToDoApp', [
         controller: 'TodolistCtrl',
         authenticate: true
       })
+      .when('/friends', {
+        templateUrl: 'partials/friends',
+        controller: 'FriendCtrl',
+        authenticate: true
+      })
       .otherwise({
         redirectTo: '/'
       });
