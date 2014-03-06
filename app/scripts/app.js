@@ -25,6 +25,11 @@ angular.module('socialNodeToDoApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
+      .when('/todolist', {
+        templateUrl: 'partials/todolist',
+        controller: 'TodolistCtrl',
+        authenticate: true
+      })
       .otherwise({
         redirectTo: '/'
       });
