@@ -1,19 +1,15 @@
 'use strict';
 
 angular.module('socialNodeToDoApp')
-  .controller('FriendsCtrl', function ($scope, $http, User, Auth) {
+  .controller('FriendCtrl', function ($scope, $http, User, Auth) {
 
-    $scope.PeopleSearch = [];
+    $scope.people = [];
+    $scope.keyword = "";
 
-    //$http.get('/api/todoLists').success(function (todoLists) {
-    //  $scope.todoLists = todoLists;
-    //});
-
-    $scope.todoList = {};
-    $scope.todoListAdd = function () {
-      $http.post('/api/todoLists', $scope.todoList).success(function(){
-        $scope.todoLists.push($scope.todoList );
-        $scope.todoList = {};
+    $scope.searchPeople = function () {
+      $http.get('/api/users/find/'+$scope.keyword).success(function(people){
+        $scope.people = people;
+        $scope.keyword = "";
       });
     };
   });

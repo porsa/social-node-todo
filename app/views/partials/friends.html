@@ -2,28 +2,35 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <form class="form" name="form" ng-submit="todoListAdd()" novalidate>
+        <form class="form" name="form" ng-submit="searchPeople()" novalidate>
 
             <div class="form-group">
-                <label>Create new ToDo list</label>
+                <label>Search people</label>
 
-                <input type="text" name="name" class="form-control" ng-model="todoList.name"
+                <input type="text" name="name" class="form-control" ng-model="keyword"
                        mongoose-error/>
                 <p class="help-block" ng-show="form.name.$error.mongoose">
                     {{ errors.other }}
                 </p>
             </div>
             <p class="help-block"> {{ message }} </p>
-            <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
+            <button class="btn btn-lg btn-primary" type="submit">Search</button>
         </form>
-        <h1>All Users </h1>
 
 
-        <div class="all-users">
-            <div ng-repeat="user in Users">
-                <h4>{{ user.name }}</h4>
-            </div>
+        <h1 ng-show="people">Found Users</h1>
 
+
+        <div class="found-users">
+            <ul ng-repeat="user in people">
+                <li>
+                  <span>{{ user.name }}</span>
+                  <span>({{ user.email }})</span>
+                  <span>
+                    <button class="btn btn-sm btn-primary" type="submit">Add Friend</button>
+                  </span>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
