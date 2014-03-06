@@ -15,6 +15,7 @@ npm install -g yo
 npm install -g generator-gruntfile
 npm install -g grunt-cli
 npm install -g passport-facebook
+npm install mongoose-friends
 cd /vagrant
 npm install
 bower install --allow-root
