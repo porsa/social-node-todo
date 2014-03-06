@@ -9,19 +9,6 @@
   <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
 </div>
 
-<div class="todo-lists">
-    <div ng-repeat="todoList in todoLists">
-        <h4>{{ todoList.name }} by {{ todoList.creator_name }}</h4>
-        <div ng-repeat="todoListItem in todoList.todoItems">
-            <h5>* {{ todoListItem.name }}</h5>
-        </div>
-    </div>
-    <form class="form" name="form" ng-submit="todoListAdd()" novalidate>
-        <input type="text" name="name" class="form-control" ng-model="todoList.name" />
-        <button>Add todolist</button>
-    </form>
-</div>
-
 <div class="footer">
   <p>♥ from Mika</p>
 </div>
