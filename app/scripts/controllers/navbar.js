@@ -8,6 +8,11 @@ angular.module('socialNodeToDoApp')
     }, {
       'title': 'Settings',
       'link': '/settings'
+
+    }, {
+        'title': 'ToDo',
+        'link': '/todolist'
+
     }];
     
     $scope.logout = function() {
