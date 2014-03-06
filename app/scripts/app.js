@@ -30,6 +30,11 @@ angular.module('socialNodeToDoApp', [
         controller: 'TodolistCtrl',
         authenticate: true
       })
+      .when('/todolist/:id', {
+        templateUrl: 'partials/todolist-detail',
+        controller: 'TodolistDetailCtrl',
+        authenticate: true
+      })
       .when('/friends', {
         templateUrl: 'partials/friends',
         controller: 'FriendCtrl',
