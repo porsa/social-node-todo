@@ -8,6 +8,15 @@
         <div ng-repeat="todoItem in todoList.todoItems">
             {{ todoItem.name }}
         </div>
-        <a href="#">Add item</a>
+        <form class="form" name="form" ng-submit="todoListItemAdd()" novalidate>
+            <input type="text" name="name" class="form-control" ng-model="todoListItem.name"
+                   mongoose-error/>
+            <p class="help-block" ng-show="form.name.$error.mongoose">
+                {{ errors.other }}
+            </p>
+
+            <p class="help-block"> {{ message }} </p>
+            <button class="btn btn-lg btn-primary" type="submit">Save item</button>
+        </form>
     </div>
 </div>
