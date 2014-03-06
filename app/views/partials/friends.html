@@ -1,11 +1,12 @@
 <div ng-include="'partials/navbar'"></div>
 
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-6">
+        <h3>Search people</h3>
         <form class="form" name="form" ng-submit="searchPeople()" novalidate>
 
             <div class="form-group">
-                <label>Search people</label>
+
 
                 <input type="text" name="name" class="form-control" ng-model="keyword"
                        mongoose-error/>
@@ -29,6 +30,30 @@
                   <span>
                     <button class="btn btn-sm btn-primary" type="submit">Add Friend</button>
                   </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="pending-friend-requests">
+        <h3>Pending friend requests</h3>
+            <ul ng-repeat="friendObject in friends">
+                <li ng-show="friendObject.status!='accepted'">
+                    <span>{{ friendObject.friend.name }}</span>
+                    <span ng-show="friendObject.friend.email">({{ friendObject.friend.email }})</span>
+                    <button ng-show="friendObject.status=='pending'" type="button" class="btn btn-danger" ng-click="acceptFriendRequest(friendObject.friend)">Accept</button>
+                    <span ng-show="friendObject.status=='requested'">Waiting for confimation</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="friends">
+            <h3>Friends</h3>
+            <ul ng-repeat="friendObject in friends">
+                <li ng-show="friendObject.status=='accepted'">
+                    <span>{{ friendObject.friend.name }}</span>
+                    <span ng-show="friendObject.friend.email">({{ friendObject.friend.email }})</span>
+                    <span>{{ friendObject.status }}</span>
                 </li>
             </ul>
         </div>

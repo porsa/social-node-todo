@@ -12,4 +12,21 @@ angular.module('socialNodeToDoApp')
         $scope.keyword = "";
       });
     };
+
+    $scope.friends = [];
+
+    var loadFriends =  function() {
+        $http.get('/api/friends/').success(function(friends){
+            $scope.friends = friends;
+        });
+    }
+
+    loadFriends();
+
+   $scope.acceptFriendRequest = function(friend){
+       $http.get('/api/users/friendrequest/'+friend._id).success(function(friends){
+           loadFriends();
+       });
+   }
+
   });
