@@ -4,17 +4,20 @@ angular.module('socialNodeToDoApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Home',
-      'link': '/'
+      'link': '/',
+      'loggedIn' : false
     }, {
       'title': 'Settings',
-      'link': '/settings'
-
+      'link': '/settings',
+      'loggedIn' : true
     }, {
-        'title': 'ToDo',
-        'link': '/todolist'
+      'title': 'ToDo',
+      'link': '/todolist',
+      'loggedIn' : true
     }, {
-        'title': 'Friends',
-        'link':  '/friends'
+      'title': 'Friends',
+      'link':  '/friends',
+      'loggedIn' : true
     }];
     
     $scope.logout = function() {
