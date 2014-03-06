@@ -2,18 +2,21 @@
 
 angular.module('socialNodeToDoApp')
   .controller('TodolistCtrl', function ($scope, $http, User, Auth) {
+    $scope.todoLists = [];
 
-        $scope.todoLists = [];
+    $scope.updateTodoLists = function () {
+      $http.get('/api/todoLists').success(function (todoLists) {
+          $scope.todoLists = todoLists;
+      });
+    };
 
-        $http.get('/api/todoLists').success(function (todoLists) {
-            $scope.todoLists = todoLists;
-        });
+    $scope.updateTodoLists();
 
+    $scope.todoList = {};
+    $scope.todoListAdd = function () {
+      $http.post('/api/todoLists', $scope.todoList).success(function(data){
+        $scope.todoLists.push(data);
         $scope.todoList = {};
-        $scope.todoListAdd = function () {
-            $http.post('/api/todoLists', $scope.todoList).success(function(){
-                $scope.todoLists.push($scope.todoList );
-                $scope.todoList = {};
-            });
-        };
+      });
+    };
   });

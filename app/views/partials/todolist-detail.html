@@ -1,0 +1,13 @@
+<div ng-include="'partials/navbar'"></div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <span>name: {{ todoList.name }}</span><br/>
+        <span>creator: {{ todoList.creator_name }}</span><br/>
+        <span>created: {{ todoList.date }}</span><br/><br/>
+        <div ng-repeat="todoItem in todoList.todoItems">
+            {{ todoItem.name }}
+        </div>
+        <a href="#">Add item</a>
+    </div>
+</div>

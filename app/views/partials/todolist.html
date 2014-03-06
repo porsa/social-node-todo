@@ -17,15 +17,19 @@
             <p class="help-block"> {{ message }} </p>
             <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
         </form>
+
         <h1>All ToDo lists </h1>
-
-
         <div class="all-todolists">
             <div ng-repeat="todoList in todoLists">
-                <h4>{{ todoList.name }}</h4>
-            </div>
+                <a href="/todolist/{{ todoList._id }}">
+                    <strong>{{ todoList.name }}</strong>
+                </a><span> by {{ todoList.creator_name }}</span>
 
+                <div ng-repeat="todoListItem in todoList.todoItems">
+                    <span>- {{ todoListItem.name }}</span>
+                </div>
+            </div>
         </div>
+        <br/>
     </div>
-</div>
 </div>
