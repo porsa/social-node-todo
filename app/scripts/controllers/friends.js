@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('socialNodeToDoApp')
-  .controller('FriendCtrl', function ($scope, $http, $timeout) {
+  .controller('FriendCtrl', function ($scope, User, $http, $timeout) {
 
     $scope.people = [];
     $scope.keyword = '';
@@ -15,7 +15,7 @@ angular.module('socialNodeToDoApp')
         $scope.keyword = '';
         $scope.searchLoading.status = 3;
         $timeout(clearLoadingStatus, 500);
-      }).error(function(data, status, headers, config) {
+      }).error(function() {
           $scope.searchLoading = {status : -1 };
           $timeout(clearLoadingStatus, 500);
         });
@@ -23,7 +23,7 @@ angular.module('socialNodeToDoApp')
 
     var clearLoadingStatus = function(){
       $scope.searchLoading.status = 0 ;
-    }
+    };
 
     $scope.friendRequests = [];
 
@@ -39,6 +39,22 @@ angular.module('socialNodeToDoApp')
       $http.get('/api/users/friendrequest/'+friend._id).success(function(){
         loadFriends();
       });
+    };
+
+
+    $scope.areFriends = function(potentialFriendId){
+      console.log(potentialFriendId._id);
+      var i;
+      var friendAmount = $scope.friendRequests.length;
+      for (i = 0; i < friendAmount; i++) {
+        console.log($scope.friendRequests[i].friend._id);
+
+        if($scope.friendRequests[i].friend._id == potentialFriendId._id){
+          return true;
+        }
+      }
+
+      return false;
     };
 
   });

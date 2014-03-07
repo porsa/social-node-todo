@@ -32,7 +32,10 @@
                   <span>{{ user.name }}</span>
                   <span ng-show="user.email">({{ user.email }})</span>
                   <span>
-                    <button class="btn btn-sm btn-primary" type="submit">Add Friend</button>
+                    <button ng-hide="areFriends(user)"
+                            type="button"
+                            class="btn btn-danger"
+                            ng-click="acceptFriendRequest(user)">Add Friend</button>
                   </span>
                 </li>
             </ul>
