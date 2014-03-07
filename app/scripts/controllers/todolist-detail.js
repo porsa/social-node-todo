@@ -11,11 +11,11 @@ angular.module('socialNodeToDoApp')
 
     $scope.todoListItemAdd = function () {
       $http.post(
-          '/api/todoLists/' + $scope.todoList._id + '/todoItems'
-          , $scope.todoListItem
-        ).success(function (data) {
-          $scope.todoList.todoItems.push(data);
-          $scope.todoListItem = {};
+        '/api/todoLists/' + $scope.todoList._id + '/todoItems',
+        $scope.todoListItem
+      ).success(function (data) {
+        $scope.todoList.todoItems.push(data);
+        $scope.todoListItem = {};
       });
-    }
+    };
   });
