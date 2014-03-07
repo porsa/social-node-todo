@@ -43,12 +43,9 @@ angular.module('socialNodeToDoApp')
 
 
     $scope.areFriends = function(potentialFriendId){
-      console.log(potentialFriendId._id);
       var i;
       var friendAmount = $scope.friendRequests.length;
       for (i = 0; i < friendAmount; i++) {
-        console.log($scope.friendRequests[i].friend._id);
-
         if($scope.friendRequests[i].friend._id == potentialFriendId._id){
           return true;
         }
