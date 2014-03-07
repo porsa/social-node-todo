@@ -13,20 +13,21 @@ angular.module('socialNodeToDoApp')
       });
     };
 
-    $scope.friends = [];
+    $scope.friendRequests = [];
 
     var loadFriends =  function() {
-        $http.get('/api/friends/').success(function(friends){
-            $scope.friends = friends;
-        });
+      $http.get('/api/friends/').success(function(friends){
+        $scope.friendRequests = friends;
+        console.log(friends);
+      });
     }
 
     loadFriends();
 
-   $scope.acceptFriendRequest = function(friend){
-       $http.get('/api/users/friendrequest/'+friend._id).success(function(friends){
-           loadFriends();
-       });
-   }
+    $scope.acceptFriendRequest = function(friend){
+      $http.get('/api/users/friendrequest/'+friend._id).success(function(friends){
+        loadFriends();
+      });
+    }
 
   });

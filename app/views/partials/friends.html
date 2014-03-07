@@ -37,23 +37,26 @@
     <div class="col-sm-6">
         <div class="pending-friend-requests">
         <h3>Pending friend requests</h3>
-            <ul ng-repeat="friendObject in friends">
-                <li ng-show="friendObject.status!='accepted'">
-                    <span>{{ friendObject.friend.name }}</span>
-                    <span ng-show="friendObject.friend.email">({{ friendObject.friend.email }})</span>
-                    <button ng-show="friendObject.status=='pending'" type="button" class="btn btn-danger" ng-click="acceptFriendRequest(friendObject.friend)">Accept</button>
-                    <span ng-show="friendObject.status=='requested'">Waiting for confimation</span>
+            <ul ng-repeat="friendRequest in friendRequests">
+                <li ng-show="friendRequest.status!='accepted'">
+                    <span>{{ friendRequest.friend.name }}</span>
+                    <span ng-show="friendRequest.friend.email">({{ friendRequest.friend.email }})</span>
+                    <button ng-show="friendRequest.status=='pending'"
+                            type="button"
+                            class="btn btn-danger"
+                            ng-click="acceptFriendRequest(friendRequest.friend)">Accept</button>
+                    <span ng-show="friendRequest.status=='requested'">Waiting for confimation</span>
                 </li>
             </ul>
         </div>
 
         <div class="friends">
             <h3>Friends</h3>
-            <ul ng-repeat="friendObject in friends">
-                <li ng-show="friendObject.status=='accepted'">
-                    <span>{{ friendObject.friend.name }}</span>
-                    <span ng-show="friendObject.friend.email">({{ friendObject.friend.email }})</span>
-                    <span>{{ friendObject.status }}</span>
+            <ul ng-repeat="friendRequest in friendRequests">
+                <li ng-show="friendRequest.status=='accepted'">
+                    <span>{{ friendRequest.friend.name }}</span>
+                    <span ng-show="friendRequest.friend.email">({{ friendRequest.friend.email }})</span>
+                    <span>{{ friendRequest.status }}</span>
                 </li>
             </ul>
         </div>

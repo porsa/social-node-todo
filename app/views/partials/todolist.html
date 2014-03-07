@@ -29,6 +29,9 @@
                 <tr ng-repeat="todoList in todoLists">
                     <td>
                         <a href="/todolist/{{ todoList._id }}">{{ todoList.name }}</a>
+                        <div ng-repeat="todoListItem in todoList.todoItems">
+                            <span>- {{ todoListItem.name }}</span>
+                        </div>
                     </td>
                     <td>
                         {{ todoList.creator_name }}
