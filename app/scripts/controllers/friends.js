@@ -20,14 +20,14 @@ angular.module('socialNodeToDoApp')
         $scope.friendRequests = friends;
         console.log(friends);
       });
-    }
+    };
 
     loadFriends();
 
     $scope.acceptFriendRequest = function(friend){
-      $http.get('/api/users/friendrequest/'+friend._id).success(function(friends){
+      $http.get('/api/users/friendrequest/'+friend._id).success(function(){
         loadFriends();
       });
-    }
+    };
 
   });
