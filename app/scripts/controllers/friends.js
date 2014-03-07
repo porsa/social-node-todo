@@ -14,7 +14,7 @@ angular.module('socialNodeToDoApp')
         $scope.people = people;
         $scope.keyword = '';
         $scope.searchLoading.status = 3;
-        $timeout(clearLoadingStatus, 500);
+        $timeout(clearLoadingStatus, 1500);
       }).error(function() {
           $scope.searchLoading = {status : -1 };
           $timeout(clearLoadingStatus, 1500);
