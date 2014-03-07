@@ -17,7 +17,7 @@ angular.module('socialNodeToDoApp')
         $timeout(clearLoadingStatus, 500);
       }).error(function() {
           $scope.searchLoading = {status : -1 };
-          $timeout(clearLoadingStatus, 500);
+          $timeout(clearLoadingStatus, 1500);
         });
     };
 
