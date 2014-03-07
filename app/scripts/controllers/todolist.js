@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('socialNodeToDoApp')
-  .controller('TodolistCtrl', function ($scope, $http, User, Auth) {
+  .controller('TodolistCtrl', function ($scope, $http) {
     $scope.todoLists = [];
 
     $scope.updateTodoLists = function () {
       $http.get('/api/todoLists').success(function (todoLists) {
-          $scope.todoLists = todoLists;
+        $scope.todoLists = todoLists;
       });
     };
 
