@@ -18,7 +18,6 @@ angular.module('socialNodeToDoApp')
     var loadFriends =  function() {
       $http.get('/api/friends/').success(function(friends){
         $scope.friendRequests = friends;
-        console.log(friends);
       });
     };
 
