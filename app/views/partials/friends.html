@@ -16,6 +16,10 @@
             </div>
             <p class="help-block"> {{ message }} </p>
             <button class="btn btn-lg btn-primary" type="submit">Search</button>
+            <img ng-show="searchLoading.status==1" width="50" src="images/icons/loading/loading1.png" />
+            <img ng-show="searchLoading.status==2" width="50" src="images/icons/loading/loading2.png" />
+            <img ng-show="searchLoading.status==3" width="50" src="images/icons/loading/loading3.png" />
+            <img ng-show="searchLoading.status==-1" width="50" src="images/icons/loading/loading-error.png" />
         </form>
 
 
