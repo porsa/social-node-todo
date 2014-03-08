@@ -3,6 +3,7 @@
 angular.module('socialNodeToDoApp')
   .controller('FriendCtrl', function ($scope, User, $http, $timeout) {
 
+    console.log($scope.currentUser);
     $scope.people = [];
     $scope.keyword = '';
     $scope.searchLoading = {status : 0 };
