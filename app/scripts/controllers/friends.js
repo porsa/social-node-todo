@@ -36,8 +36,16 @@ angular.module('socialNodeToDoApp')
 
     loadFriends();
 
+    /*
     $scope.acceptFriendRequest = function(friend){
       $http.get('/api/users/friendrequest/'+friend._id).success(function(){
+        loadFriends();
+      });
+    };
+    */
+    $scope.acceptFriendRequest = function(friend){
+
+      $http.post('/api/friends/', { "friendId": friend._id}).success(function(){
         loadFriends();
       });
     };

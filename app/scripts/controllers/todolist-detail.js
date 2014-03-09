@@ -21,9 +21,14 @@ angular.module('socialNodeToDoApp')
       });
     };
 
+    $scope.usersSharingList = [];
+
     $http.get('/api/todoLists/' + $routeParams.id).success(function (todoList) {
       $scope.todoList = todoList;
       $scope.getUserTodoListItems(todoList._id);
+      angular.forEach(todoList.sharedWith, function(sharedWithUser){
+        $scope.usersSharingList[sharedWithUser.user_id] = true;
+      });
     });
 
     $scope.todoListItemComplete = function (todoListItem) {
@@ -51,4 +56,48 @@ angular.module('socialNodeToDoApp')
         $scope.todoListItem = {};
       });
     };
+
+    $scope.friendRequests = [];
+
+    var loadFriends =  function() {
+      $http.get('/api/friends/').success(function(friends){
+        $scope.friendRequests = friends;
+      });
+    };
+
+    loadFriends();
+
+
+
+    $scope.todolistUsers = [];
+
+    $scope.shareList = function (friendRequest) {
+
+      $scope.friendDetails = {
+        user_id: friendRequest.friend._id,
+        name: friendRequest.friend.name
+      };
+      console.log($scope.friendDetails);
+      $http.post(
+          '/api/todoLists/' + $scope.todoList._id + '/share',
+          $scope.friendDetails
+        ).success(function (data) {
+          if(data != null)
+            $scope.todolistUsers.push($scope.friendDetails);
+            console.log(data);
+          $scope.friendDetail = {}
+          $scope.usersSharingList[data.user_id] = true;
+        });
+    };
+
+
+
+    $scope.isSharedWithUser = function (friend){
+      if($scope.usersSharingList[friend._id] == true){
+        return true;
+      }
+      return false;
+    };
+
+
   });

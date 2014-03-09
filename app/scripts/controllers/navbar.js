@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('socialNodeToDoApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth) {
+  .controller('NavbarCtrl', function ($scope, $location, Auth, Session) {
     $scope.menu = [{
       'title': 'Home',
       'link': '/',

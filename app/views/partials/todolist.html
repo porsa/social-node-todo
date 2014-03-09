@@ -38,7 +38,11 @@
                         {{ todoList.creator_name }}
                     </td>
                     <td>
-
+                        <ul>
+                            <li ng-repeat="friend in todoList.sharedWith">
+                                {{friend.name }}
+                            </li>
+                        </ul>
                     </td>
                 </tr>
 
