@@ -67,33 +67,32 @@ angular.module('socialNodeToDoApp')
 
     loadFriends();
 
-
-
     $scope.todolistUsers = [];
 
     $scope.shareList = function (friendRequest) {
-
       $scope.friendDetails = {
         user_id: friendRequest.friend._id,
         name: friendRequest.friend.name
       };
-      console.log($scope.friendDetails);
       $http.post(
           '/api/todoLists/' + $scope.todoList._id + '/share',
           $scope.friendDetails
         ).success(function (data) {
-          if(data != null)
-            $scope.todolistUsers.push($scope.friendDetails);
-            console.log(data);
-          $scope.friendDetail = {}
+          $scope.todolistUsers.push($scope.friendDetails);
+          $scope.friendDetail = {};
           $scope.usersSharingList[data.user_id] = true;
         });
     };
 
-
+    $scope.isSharedWithUser = function (friend){
+      if($scope.usersSharingList[friend._id] === true){
+        return true;
+      }
+      return false;
+    };
 
     $scope.isSharedWithUser = function (friend){
-      if($scope.usersSharingList[friend._id] == true){
+      if($scope.usersSharingList[friend._id] === true){
         return true;
       }
       return false;
