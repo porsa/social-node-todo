@@ -79,7 +79,7 @@ angular.module('socialNodeToDoApp')
           $scope.friendDetails
         ).success(function (data) {
           $scope.todolistUsers.push($scope.friendDetails);
-          $scope.friendDetail = {};
+          $scope.friendDetails = {};
           $scope.usersSharingList[data.user_id] = true;
         });
     };
