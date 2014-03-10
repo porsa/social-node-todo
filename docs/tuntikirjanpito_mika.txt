@@ -1,0 +1,12 @@
+Päivä	Aika	Tunnit	Mitä
+edellinen pe		3	Yeoman asennus ja generaattoreihin tutustuminen
+Ma	9 - 16	7	Yeoman MEAN stack generation. Vagrant+VirtualBox asennus. Määrittely. Versionhallinta
+Ti	09:30 - 16:30	7	FB-login ja mongoose ihmettelyä, yo generate, angular
+Ke	09:00 - 16:00	7	datan näyttäminen fronttarissa
+To	12 - 16	4	friend request api
+To 	17:30 - 19:30	2	friend request front-end
+Pe	10 - 15:30	5,5	loading icons, accept friend request
+Pe	18:30 - 20	1,5	accept friend request
+La-Su		5	Mongo db queries / sharing todolists
+Ma	9-15	6	Layout improvements etc
+		48	YHT
