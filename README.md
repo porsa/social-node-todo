@@ -19,7 +19,7 @@
 3. `vagrant ssh` to connect the virtual machine.
 4. `cd /vagrant`
 5. `grunt serve` to start the nodejs server.
-6. Go to browser and connect to the `http://192.168.123.100`.
+6. Go to browser and connect to the `http://192.168.123.100:9000`.
 
 If you want to install it without Vagrant, just make sure you have everything installed according the `provisioning/playbook.sh` shell script.
 
