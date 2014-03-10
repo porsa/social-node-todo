@@ -27,3 +27,6 @@ If you want to install it without Vagrant, just make sure you have everything in
 1. Add following line to /etc/hosts (in your local environment, not in virtual machine)
 `192.168.123.100 todolist-local.fi`
 2. Connect to the application via browser using the following url: `http://todolist-local.fi:9000`
+
+## Working hours
+Go to docs/
