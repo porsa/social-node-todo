@@ -1,0 +1,17 @@
+Yhteensä: 46h
+
+3.3 7h ympäristön pystytys, tutoriaalit
+
+3.3 1h tutoriaalit
+
+4.3 7.5h facebook login toteutus
+
+5.3 9h facebook apiin tutustuminen ja käyttö. backend koodausta
+
+6.3 7.5h käyttäjien haku nimen tai sähköpostin perusteella, backend api + frontend
+
+7.3 7h käyttäjien haun parantelua, tietoturvaa apeihin, delete api todolistille
+
+9.3 1h Todolist item delete api
+
+10.3 6h Fronttia kuntoon, heroku säätöä
