@@ -25,6 +25,7 @@
                 <tr>
                     <th>ToDo list</th>
                     <th>created by</th>
+                    <th>shared with</th>
                 </tr>
                 <tr ng-repeat="todoList in todoLists">
                     <td>
@@ -35,6 +36,13 @@
                     </td>
                     <td>
                         {{ todoList.creator_name }}
+                    </td>
+                    <td>
+                        <ul>
+                            <li ng-repeat="friend in todoList.sharedWith">
+                                {{friend.name }}
+                            </li>
+                        </ul>
                     </td>
                 </tr>
 
