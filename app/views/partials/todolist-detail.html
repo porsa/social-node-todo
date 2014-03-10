@@ -8,10 +8,16 @@
         <h2>Todo-list items</h2>
         <div ng-repeat="todoItem in todoList.todoItems">
             {{ todoItem.name }}
-            <button ng-hide="todoItem.completed" class="btn" type="submit" ng-click="todoListItemComplete(todoItem)">
-                Complete
-            </button>
-            <span style="color: green" ng-show="todoItem.completed">DONE!</span>
+            <span ng-hide="todoItem.completed">
+                 <button  class="btn btn-xs" type="submit" ng-click="todoListItemComplete(todoItem)">
+                     Complete
+                 </button>
+            </span>
+            <span ng-show="todoItem.completed">
+                 <button  class="btn btn-success btn-xs" type="submit" ng-click="todoListItemComplete(todoItem)">
+                     Completed
+                 </button>
+            </span>
         </div>
         <form class="form" name="form" ng-submit="todoListItemAdd()" novalidate>
             <label>Name
