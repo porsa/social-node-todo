@@ -1,0 +1,37 @@
+Total: 44,5h
+
+3.3.2014 - maanantai 11.00 - 18:30 (7,5h)
+
+Vagrantin ja Yeomanin pystytys. MEAN-stackin valinta.
+
+4.3.2014 - tiistai - 09:00 - 16:30 (7,5h)
+
+Kehitysympäristön hiominen Mikalle. MongoDB ja RDBMS välisten erojen ihmettely. Yeoman dummydatan heivaaminen. Angularilla fronttia. Todolistojen lisääminen.
+
+5.3.2014 - keskiviikko - 08:45 - 18:15 (9h 30min)
+
+MongoDB/JavaScript/Mongoose-taistelut. Mongoosen schemojen määrittelyä. TodoListan omistajat ja item-collectionit.
+
+6.3.2014 - torstai - 09:00 - 17:00 (8h)
+
+TodoListItemien lisääminen, todolistan näyttäminen. Code reviewit. Käyttäjän etsiminen.
+
+7.3.2014 - perjantai - 10:00 - 17:00 (7h)
+
+Todolistan itemien suorittaminen. Reviewaamiset. Regexit.
+
+7.3.2014 - perjantai - 19:00 - 19:30 (0.5h)
+
+Latausikoni -pull request in testaaminen, code review ja mergeys.
+
+8.3.2014 - lauantai - 13:00 - 14:00 (1h)
+
+MongoDB:n ihmettely Mikan kanssa, listan jakaminen kavereiden kesken.
+
+10.3.2014 - maanantai - 7:00 - 8:00 (1h)
+
+Pull requestien code review, testaus ja toisen mergeäminen.
+
+10.3.2014 - maanantai - 10:00 - 12:00 (2h)
+
+Viimeiset hiomiset
