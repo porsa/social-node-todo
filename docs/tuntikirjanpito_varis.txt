@@ -1,14 +1,14 @@
 Yhteensä: 46h
 
-3.3 7h ympäristön pystytys, tutoriaalit
+3.3 7h ympäristön pystytys, tutoriaalit, vagrant yeoman express angular
 
 3.3 1h tutoriaalit
 
-4.3 7.5h facebook login toteutus
+4.3 7.5h facebook login toteutus (backend frontend)
 
 5.3 9h facebook apiin tutustuminen ja käyttö. backend koodausta
 
-6.3 7.5h käyttäjien haku nimen tai sähköpostin perusteella, backend api + frontend
+6.3 7.5h käyttäjien haku nimen tai sähköpostin perusteella, backend api + frontend, regex
 
 7.3 7h käyttäjien haun parantelua, tietoturvaa apeihin, delete api todolistille
 
