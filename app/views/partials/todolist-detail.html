@@ -12,11 +12,11 @@
                  <button  class="btn btn-xs" type="submit" ng-click="todoListItemComplete(todoItem)">
                      Complete
                  </button>
+
             </span>
             <span ng-show="todoItem.completed">
-                 <button  class="btn btn-success btn-xs" type="submit" ng-click="todoListItemComplete(todoItem)">
-                     Completed
-                 </button>
+
+                <span class="label label-success">Completed</span>
             </span>
         </div>
         <form class="form" name="form" ng-submit="todoListItemAdd()" novalidate>
