@@ -6,19 +6,26 @@
         <span>creator: {{ todoList.creator_name }}</span><br/>
         <span>created: {{ todoList.date }}</span><br/><br/>
         <h2>Todo-list items</h2>
-        <div ng-repeat="todoItem in todoList.todoItems">
-            {{ todoItem.name }}
-            <span ng-hide="todoItem.completed">
-                 <button  class="btn btn-xs" type="submit" ng-click="todoListItemComplete(todoItem)">
-                     Complete
-                 </button>
+        <table class="table">
+            <tr ng-repeat="todoItem in todoList.todoItems">
 
-            </span>
-            <span ng-show="todoItem.completed">
+                <td>
+                    {{ todoItem.name }}
+                </td><td>
+                    <span ng-hide="todoItem.completed">
+                         <button  class="btn btn-xs" type="submit" ng-click="todoListItemComplete(todoItem)">
+                             Complete
+                         </button>
 
-                <span class="label label-success">Completed</span>
-            </span>
-        </div>
+                    </span>
+                    <span ng-show="todoItem.completed">
+
+                        <span class="label label-success">Completed</span>
+                    </span>
+                </td>
+                </tr>
+        </tr>
+        </table>
         <form class="form" name="form" ng-submit="todoListItemAdd()" novalidate>
             <label>Name
                 <input type="text" name="name" class="form-control" ng-model="todoListItem.name"
