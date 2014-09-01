@@ -11,6 +11,9 @@ sudo apt-get install -y nodejs
 sudo apt-get install -y git
 sudo apt-get install -y mongodb-10gen
 
+#After trying many online suggestions to fix this problem, I ended up adding the following to my ~/.bashrc:
+#export LC_ALL=en_US.UTF-8
+
 npm install -g yo
 npm install -g generator-gruntfile
 npm install -g grunt-cli
